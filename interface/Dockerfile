@@ -16,4 +16,4 @@ CMD npm install -g browserify babel \
    && browserify -t babelify app/app.js -o public/js/app.js \
    && npm prune --production
 
-CMD node server.js
+CMD [node server.js]
