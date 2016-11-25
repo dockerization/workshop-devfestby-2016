@@ -1,7 +1,10 @@
 version: '2'
 services:
   logic:
-
+    build: ./logic
+  depends_on:
+    - filler
+    - charger
 
 
 
