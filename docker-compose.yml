@@ -1,7 +1,7 @@
 version: '2'
 services:
   logic:
-    build: ./logic
+    image: registry.dockerization.xyz/dz/logic:latest
   depends_on:
     - filler
     - charger
@@ -12,14 +12,14 @@ services:
 
 
   filler:
-    build: ./filler
+    image: registry.dockerization.xyz/dz/filler:latest
 
 
 
 
 
   charger:
-    build: ./charger
+    image: registry.dockerization.xyz/dz/charger:latest
 
 
 
@@ -27,8 +27,8 @@ services:
 
 
   interface:
-    build: "./interface"
-    depends_on: 
+    image: registry.dockerization.xyz/dz/interface:latest
+    depends_on:
       - logic
     ports:
       - "3000:80"
