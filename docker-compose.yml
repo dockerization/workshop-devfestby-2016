@@ -9,8 +9,7 @@ services:
 
 
   filler:
-
-
+    build: ./filler
 
 
 
