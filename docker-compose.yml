@@ -17,7 +17,7 @@ services:
 
 
   charger:
-
+    build: ./charger
 
 
 
