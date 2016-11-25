@@ -12,12 +12,14 @@ services:
 
   filler:
     image: registry.dockerization.xyz/dz/filler:latest
-    networks: back
+    networks: 
+      - back
 
 
   charger:
     image: registry.dockerization.xyz/dz/charger:latest
-    networks: back
+    networks:
+      - back
 
 
   interface:
@@ -26,7 +28,8 @@ services:
       - logic
     ports:
       - "3000:80"
-    networks: front
+    networks:
+      - front
 
 networks:
   front:
