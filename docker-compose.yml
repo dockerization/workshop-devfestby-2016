@@ -27,3 +27,8 @@ services:
 
 
   interface:
+    build: "./interface"
+    depends_on: 
+      - logic
+    ports:
+      - "3000:80"
