@@ -13,7 +13,7 @@ ENV LOGIC_URL http://logic
 
 ADD . /app/
 
-PUN npm install -g browserify babel \
+RUN npm install -g browserify babel \
    && npm install \
    && browserify -t babelify app/app.js -o public/js/app.js \
    && npm prune --production
