@@ -2,28 +2,24 @@ version: '2'
 services:
   logic:
     image: registry.dockerization.xyz/dz/logic:latest
-  depends_on:
-    - filler
-    - charger
-
-
-
-
+    depends_on:
+      - filler
+      - charger
+    networks: 
+      - front
+      - back
 
 
   filler:
     image: registry.dockerization.xyz/dz/filler:latest
-
-
-
+    networks: 
+      - back
 
 
   charger:
     image: registry.dockerization.xyz/dz/charger:latest
-
-
-
-
+    networks:
+      - back
 
 
   interface:
@@ -32,3 +28,11 @@ services:
       - logic
     ports:
       - "3000:80"
+    networks:
+      - front
+
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
