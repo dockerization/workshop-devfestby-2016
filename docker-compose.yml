@@ -25,7 +25,7 @@ services:
 
 
   interface:
-    build: "./app"
+    build: "./interface"
     depends_on: 
       - logic
     ports:
