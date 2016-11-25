@@ -1,7 +1,10 @@
 version: '2'
 services:
   logic:
-
+    build: ./logic
+  depends_on:
+    - filler
+    - charger
 
 
 
@@ -16,7 +19,7 @@ services:
 
 
   charger:
-
+    build: ./charger
 
 
 
@@ -24,3 +27,8 @@ services:
 
 
   interface:
+    build: "./interface"
+    depends_on: 
+      - logic
+    ports:
+      - "3000:80"
